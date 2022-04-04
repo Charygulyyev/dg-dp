@@ -60,7 +60,7 @@ export default Vue.extend({
     return {
       items: [
         { id: 1, text: "blablabla", isDraggable: true, boxId: 1 },
-        { id: "2", text: "albalbalbalba", isDraggable: true, boxId: 2 },
+        { id: 2, text: "albalbalbalba", isDraggable: true, boxId: 2 },
         { id: 3, text: "oirhoeirhgoelrkn", isDraggable: true, boxId: 1 },
         { id: 4, text: "sejfoilsbdjkfsdfsdf", isDraggable: true, boxId: 1 },
         { id: 5, text: "yrbeubskdjb", isDraggable: true, boxId: 2 },
