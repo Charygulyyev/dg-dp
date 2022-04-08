@@ -7,10 +7,10 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import DraggBoxes from "../components/DraggBoxes.vue";
+import Vue from 'vue';
+import DraggBoxes from '../components/DraggBoxes.vue';
 export default Vue.extend({
-  name: "IndexPage",
+  name: 'IndexPage',
   components: {
     DraggBoxes,
   },
