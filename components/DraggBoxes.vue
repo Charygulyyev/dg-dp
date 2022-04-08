@@ -43,29 +43,29 @@
         {{ item.text }}
       </div>
     </div>
-    <strong>Old index: {{ this.oldIndex }}</strong>
+    <strong>Old index: {{ oldIndex }}</strong>
     <br />
-    <strong>New index: {{ this.newIndex }}</strong>
+    <strong>New index: {{ newIndex }}</strong>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import draggable from "vuedraggable";
-import { item, ItemsType } from "~/types/components/dragBoxes";
+import Vue from 'vue';
+import draggable from 'vuedraggable';
+import { item, ItemsType } from '../types/components/dragBoxes';
 export default Vue.extend({
-  name: "DraggBoxes",
+  name: 'DraggBoxes',
   components: { draggable },
   data() {
     return {
       items: [
-        { id: 1, text: "blablabla", isDraggable: true, boxId: 1 },
-        { id: 2, text: "albalbalbalba", isDraggable: true, boxId: 2 },
-        { id: 3, text: "oirhoeirhgoelrkn", isDraggable: true, boxId: 1 },
-        { id: 4, text: "sejfoilsbdjkfsdfsdf", isDraggable: true, boxId: 1 },
-        { id: 5, text: "yrbeubskdjb", isDraggable: true, boxId: 2 },
-        { id: 6, text: "wopeijonldnsd", isDraggable: true, boxId: 2 },
-        { id: 7, text: "opwejfoilsbdjkfsdfsdf", isDraggable: true, boxId: 1 },
+        { id: 1, text: 'blablabla', isDraggable: true, boxId: 1 },
+        { id: 2, text: 'albalbalbalba', isDraggable: true, boxId: 2 },
+        { id: 3, text: 'oirhoeirhgoelrkn', isDraggable: true, boxId: 1 },
+        { id: 4, text: 'sejfoilsbdjkfsdfsdf', isDraggable: true, boxId: 1 },
+        { id: 5, text: 'yrbeubskdjb', isDraggable: true, boxId: 2 },
+        { id: 6, text: 'wopeijonldnsd', isDraggable: true, boxId: 2 },
+        { id: 7, text: 'opwejfoilsbdjkfsdfsdf', isDraggable: true, boxId: 1 },
       ] as ItemsType,
       items1: [],
       items2: [],
@@ -82,12 +82,12 @@ export default Vue.extend({
       elem.isDraggable = !elem.isDraggable;
     },
     startDragging(event: any, item: item): void {
-      event.dataTransfer.effectAllowed = "move";
-      event.dataTransfer.dropEffect = "move";
-      event.dataTransfer.setData("itemID", item.id);
+      event.dataTransfer.effectAllowed = 'move';
+      event.dataTransfer.dropEffect = 'move';
+      event.dataTransfer.setData('itemID', item.id);
     },
     onDrop(event: any, listNum: number): void {
-      let itemID: number = parseInt(event.dataTransfer.getData("itemID"));
+      let itemID: number = parseInt(event.dataTransfer.getData('itemID'));
       let item: any = this.items.find((item: item) => item.id === itemID);
       item.boxId = listNum;
     },
